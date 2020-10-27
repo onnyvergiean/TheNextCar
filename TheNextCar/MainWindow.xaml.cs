@@ -24,5 +24,25 @@ namespace TheNextCar
         {
             InitializeComponent();
         }
+
+        private void OnStartButtonClicked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void OnDoorOpenButtonClicked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void OnLockDoorButtonClicked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void OnAccuButtonClicked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
