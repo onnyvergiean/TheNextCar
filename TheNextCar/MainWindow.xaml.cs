@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,22 +28,22 @@ namespace TheNextCar
 
         private void OnStartButtonClicked(object sender, RoutedEventArgs e)
         {
-
+            Debug.WriteLine("Button Start");
         }
 
         private void OnDoorOpenButtonClicked(object sender, RoutedEventArgs e)
         {
-
+            Debug.WriteLine("Button Open");
         }
 
         private void OnLockDoorButtonClicked(object sender, RoutedEventArgs e)
         {
-
+            Debug.WriteLine("Button Lock");
         }
 
         private void OnAccuButtonClicked(object sender, RoutedEventArgs e)
         {
-
+            Debug.WriteLine("Button Accu");
         }
     }
 }
