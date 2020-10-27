@@ -60,7 +60,7 @@ namespace TheNextCar.Controller
 
     interface onDoorChanged
     {
-        void doorSecurityChanged(string vale, string message);
-        void doorStatusChanged(string vale, string message);
+        void doorSecurityChanged(string value, string message);
+        void doorStatusChanged(string value, string message);
     }
 }
