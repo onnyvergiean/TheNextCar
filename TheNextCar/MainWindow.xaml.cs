@@ -13,37 +13,69 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TheNextCar.Controller;
 
 namespace TheNextCar
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window, OnPowerChanged, onDoorChanged, onCarEngineStatusChanged
     {
+        private Car nextCar;
         public MainWindow()
         {
             InitializeComponent();
+
+            AccubatteryController accubatteryController = new AccubatteryController(this);
+            DoorController doorController = new DoorController(this);
+
+            nextCar = new Car(accubatteryController, doorController, this);
+
         }
 
         private void OnStartButtonClicked(object sender, RoutedEventArgs e)
         {
-            Debug.WriteLine("Button Start");
+            this.nextCar.toggleStartEngineButton();
         }
 
         private void OnDoorOpenButtonClicked(object sender, RoutedEventArgs e)
         {
-            Debug.WriteLine("Button Open");
+            this.nextCar.toggleTheDoorButton();
         }
 
         private void OnLockDoorButtonClicked(object sender, RoutedEventArgs e)
         {
-            Debug.WriteLine("Button Lock");
+            this.nextCar.toggleTheLoockDoorButton();
         }
 
         private void OnAccuButtonClicked(object sender, RoutedEventArgs e)
         {
-            Debug.WriteLine("Button Accu");
+            this.nextCar.toggleThePowerButton();
+        }
+
+        public void onPowerChangedStatus(string value, string message)
+        {
+            this.AccuState.Content = message;
+            this.AccuButton.Content = value;
+        }
+
+        public void doorSecurityChanged(string value, string message)
+        {
+            this.LockDoorState.Content = message;
+            this.LockDoorButton.Content = value;
+        }
+
+        public void doorStatusChanged(string value, string message)
+        {
+            this.DoorOpenState.Content = message;
+            this.DoorOpenButton.Content = value;
+        }
+
+        public void carEngineStatusChanged(string value, string message)
+        {
+            status.Content = message;
+            StartButton.Content = message;
         }
     }
 }
