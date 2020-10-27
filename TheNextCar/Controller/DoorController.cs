@@ -44,7 +44,7 @@ namespace TheNextCar.Controller
         public void unlock()
         {
             this.door.unlock();
-            onDoorChanged.doorSecurityChanged("UNLOCKED", "diir us unlocked");
+            onDoorChanged.doorSecurityChanged("UNLOCKED", "door is unlocked");
         }
 
         public bool isClose()

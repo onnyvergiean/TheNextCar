@@ -75,7 +75,7 @@ namespace TheNextCar
         public void carEngineStatusChanged(string value, string message)
         {
             status.Content = message;
-            StartButton.Content = message;
+            StartButton.Content = value;
         }
     }
 }
