@@ -10,7 +10,7 @@ namespace TheNextCar.Controller
         private Accubattery accubattery;
         private OnPowerChanged callBackOnPowerChanged;
 
-        public AccubatteryController(OnPowerChanged calkBackOnPowerChanged)
+        public AccubatteryController( OnPowerChanged callBackOnPowerChanged)
         {
             this.accubattery = new Accubattery(12);
             this.callBackOnPowerChanged = callBackOnPowerChanged;
